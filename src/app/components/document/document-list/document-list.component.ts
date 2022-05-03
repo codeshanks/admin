@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DocumentService } from 'src/app/services/document/document.service';
+import { DocumentService } from '../../../services/document/document.service';
 
 @Component({
   selector: 'app-document-list',
