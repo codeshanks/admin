@@ -12,7 +12,7 @@ export class DocumentContainerComponent implements OnInit {
   @ViewChild(DocumentDetailComponent)
   private documentDetail!: DocumentDetailComponent;
   documentId!: number;
-  @Input() companyId: number = 0;
+  @Input() companyId: string ='';
   ngOnInit() {
 
   }

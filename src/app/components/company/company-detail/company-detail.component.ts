@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { CompanyService } from '../../../services/company/company.service';
-import { Company } from './company'
+import { Company } from '../company-list/company';
+import { CompanyDetail } from './company-detail'
 
 @Component({
   selector: 'app-company-detail',
@@ -15,18 +16,24 @@ export class CompanyDetailComponent implements OnInit {
     private companyService: CompanyService,
   ) { }
 
-  name!: string | null;
-  companyId!: number;
+  companyId!: string;
   company!: Company;
+  companyDetail!: CompanyDetail;
 
   ngOnInit() {
-    this.companyId = Number(this.route.snapshot.paramMap.get('id'));
-    this.name = this.route.snapshot.paramMap.get('name');
+    this.companyId = this.route.snapshot.paramMap.get('id')?? '';
     this.getCompanyDetails(this.companyId);
+    this.getCompany(this.companyId);
   }
 
-  getCompanyDetails(id: number){
-    this.company = <Company>(this.companyService.getCompanyDetail(id));
+  getCompanyDetails(id: string){
+    this.companyDetail = <CompanyDetail>(this.companyService.getCompanyDetail(id));
+  }
+
+  getCompany(id: string){
+    this.companyService.getCompany(id).subscribe(
+      (x:any) => this.company = x
+    );
   }
 
 }

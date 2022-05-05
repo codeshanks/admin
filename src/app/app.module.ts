@@ -11,6 +11,7 @@ import { CompanyDetailModule } from './components/company/company-detail/company
 import { DocumentListModule } from './components/document/document-list/document-list.module';
 import { DocumentContainerModule } from './components/document/document-container/document-container.module';
 import { DocumentDetailModule } from './components/document/document-detail/document-detail.module';
+import { ContainerModule } from './components/container/container.module';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,10 @@ import { DocumentDetailModule } from './components/document/document-detail/docu
     AppRoutingModule,
     NavBasicModule,
     CompanyListModule,
-	  CompanyDetailModule,
     DocumentListModule,
     DocumentContainerModule,
-    DocumentDetailModule
+    DocumentDetailModule,
+    ContainerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,8 +15,9 @@ export class DocumentListComponent implements OnInit {
     private route: ActivatedRoute,
   ) { }
 
-  @Input() companyId: number = 0;
+  @Input() companyId: string = '';
   documents:any = [];
+  public term: string = "";
   ngOnInit() {
     //this.companyId = Number(this.route.snapshot.paramMap.get('name'))?? 0;
     this.documents = this.documentService.getDocumentByCompanyId(this.companyId);

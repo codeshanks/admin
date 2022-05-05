@@ -6,12 +6,12 @@ import { CompanyDetailComponent } from './components/company/company-detail/comp
 import { DocumentListComponent } from './components/document/document-list/document-list.component';
 import { DocumentDetailComponent } from './components/document/document-detail/document-detail.component';
 import { DocumentContainerComponent } from './components/document/document-container/document-container.component';
+import { ContainerComponent } from './components/container/container.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/company', pathMatch: 'full' },
-  { path: 'company', component: CompanyListComponent },
+  { path: '', component: CompanyListComponent },
+  { path: 'company/:id', loadChildren: () => import('./components/company/company-detail/company-detail.module').then(m => m.CompanyDetailModule) },
   { path: 'documents', component: DocumentContainerComponent },
-  { path: 'company/:id/:name', component: CompanyDetailComponent }
   //{ path: 'company/:name', component: CompanyDetailComponent }
   //loadChildren: () => import('./basic-ui/basic-ui.module').then(m => m.BasicUiModule)
 ];

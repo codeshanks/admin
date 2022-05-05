@@ -1,17 +1,6 @@
 <div class="container-fluid page-body-wrapper">
-  <ul ngbNav #nav="ngbNav" class="nav-tabs">
-    <li [ngbNavItem]="1">
-      <a ngbNavLink routerLink="/company">Companies</a>
-      <ng-template ngbNavContent>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="2">
-      <a ngbNavLink routerLink="/documents">Documents</a>
-      <ng-template ngbNavContent>
-      </ng-template>
-    </li>
-  </ul>
-  <router-outlet [ngbNavOutlet]="nav">
+  <app-container></app-container>
+  <router-outlet>
   </router-outlet>
 </div>
 

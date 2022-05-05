@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { of,Observable } from 'rxjs';
+import { of,Observable, shareReplay, BehaviorSubject, map } from 'rxjs';
+import { Company } from '../../components/company/company-list/company';
+import { CompanyDetail } from '../../components/company/company-detail/company-detail';
 
 @Injectable({
   providedIn: 'root'
@@ -8,25 +10,44 @@ export class CompanyService {
 
 constructor() { }
 
+private cache$!: Observable<Array<Company>>;
 
-getCompanies():Observable<any[]> {
-  return  of([
-          {name: "TestCompany", id: 123},
-          {name: "Vandelay Industries", id: 234},
-          {name: "Bluth Company", id: 456},
-          {name: "Dunder Mifflin", id: 789}
-         ])
+getCompanies() {
+  if (!this.cache$) {
+    this.cache$ = this.requestCompanies();
+  }
+  return this.cache$;
 }
 
-getCompanyDetail(id: number){
-  return this.companyData.find(x => x.id == id)
+getCompany(id: string) {
+  if (!this.cache$){
+    this.cache$ = this.requestCompanies();
+  }
+  return this.cache$.pipe(map(x => x.find(z => z.CompanyID == id)))
+}
+
+private requestCompanies(): Observable<any[]> {
+  return of(this.companies);
+}
+
+getCompanyDetail(id: string){
+  return <CompanyDetail>this.companyData.find(x => x.CompanyID == id)
 }
 
 companyData = [
-  {id: 123, CompanyName: "TestCompany", URLSuffix: "test", ReportingName: "TestCompany"},
-  {id: 234, CompanyName: "Vandelay Industries", URLSuffix: "Vandelay", ReportingName: "VandelayIndustries"},
-  {id: 456, CompanyName: "Bluth Company", URLSuffix: "Bluth", ReportingName: "BluthCompany"},
-  {id: 789, CompanyName: "Dunder Mifflin", URLSuffix: "Dunder", ReportingName: "DunderMifflin"}
+  {CompanyProfileId: "123", CompanyID: "123", StartDate: new Date('2021-01-01'), StopDate: new Date('2099-01-01'), CompanyName: "TestCompany", AllowBlindSignups: false, LoginRestrictedCompletely: false, LoginRestrictedToAdmins: false, IsDemoCompany: true, LoginRestrictedToSso: false, LoginRestrictedToSsoAndAdmin: false},
+  {CompanyProfileId: "234", CompanyID: "234", StartDate: new Date('2021-01-01'), StopDate: new Date('2099-01-01'), CompanyName: "Vandelay Industries", AllowBlindSignups: false, LoginRestrictedCompletely: false, LoginRestrictedToAdmins: false, IsDemoCompany: true, LoginRestrictedToSso: false, LoginRestrictedToSsoAndAdmin: false},
+  {CompanyProfileId: "456", CompanyID: "456", StartDate: new Date('2021-01-01'), StopDate: new Date('2099-01-01'), CompanyName: "Bluth Company", AllowBlindSignups: false, LoginRestrictedCompletely: false, LoginRestrictedToAdmins: false, IsDemoCompany: true, LoginRestrictedToSso: false, LoginRestrictedToSsoAndAdmin: false},
+  {CompanyProfileId: "789", CompanyID: "789", StartDate: new Date('2021-01-01'), StopDate: new Date('2099-01-01'), CompanyName: "Dunder Mifflin", AllowBlindSignups: false, LoginRestrictedCompletely: false, LoginRestrictedToAdmins: false, IsDemoCompany: true, LoginRestrictedToSso: false, LoginRestrictedToSsoAndAdmin: false}
 ]
+
+companies =
+[
+  {CompanyID: "123", CompanyName: "TestCompany", URLSuffix: "test", IsActive: true, ReportingName: "TestCompany"},
+  {CompanyID: "234", CompanyName: "Vandelay Industries", URLSuffix: "vand", IsActive: true, ReportingName: "VandelayIndustries"},
+  {CompanyID: "456", CompanyName: "Bluth Company", URLSuffix: "bluth", IsActive: true, ReportingName: "BluthCompany"},
+  {CompanyID: "789", CompanyName: "Dunder Mifflin", URLSuffix: "dunder", IsActive: true, ReportingName: "DunderMifflin"}
+]
+
 
 }

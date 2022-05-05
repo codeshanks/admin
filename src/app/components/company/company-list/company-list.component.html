@@ -1,14 +1,11 @@
-<div class="container-scroller">
-  <div class="container-fluid page-body-wrapper">
-    <div class="row" *ngFor="let company of companies">
-      <div class="col-lg-12 grid-margin stretch-card">
-        <div class="card">
-          <div class="card-description" [routerLink]="['/company', company.id, company.name]">
-            {{company.name}}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<input type="text" [(ngModel)]="term">
+<div class="table-responsive">
+  <table class="table table-hover">
+    <tbody>
+      <tr *ngFor="let company of companies |filter:term" [routerLink]="['/company', company.CompanyID]">
+        <td>{{company.CompanyName}}</td>
+        <td>{{company.CompanyID}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-

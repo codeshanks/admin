@@ -1,6 +1,7 @@
 export interface Company {
-  id: number;
+  CompanyID: string;
   CompanyName: string;
   URLSuffix: string;
+  IsActive: boolean;
   ReportingName: string;
 }
