@@ -35,7 +35,7 @@ getCompanyDetail(id: string){
 }
 
 companyData = [
-  {CompanyProfileId: "123", CompanyID: "123", StartDate: new Date('2021-01-01'), StopDate: new Date('2099-01-01'), CompanyName: "TestCompany", AllowBlindSignups: false, LoginRestrictedCompletely: false, LoginRestrictedToAdmins: false, IsDemoCompany: true, LoginRestrictedToSso: false, LoginRestrictedToSsoAndAdmin: false},
+  {CompanyProfileId: "123", CompanyID: "123", StartDate: new Date('2021-01-01'), StopDate: null, CompanyName: "TestCompany", AllowBlindSignups: false, LoginRestrictedCompletely: false, LoginRestrictedToAdmins: false, IsDemoCompany: true, LoginRestrictedToSso: false, LoginRestrictedToSsoAndAdmin: false},
   {CompanyProfileId: "234", CompanyID: "234", StartDate: new Date('2021-01-01'), StopDate: new Date('2099-01-01'), CompanyName: "Vandelay Industries", AllowBlindSignups: false, LoginRestrictedCompletely: false, LoginRestrictedToAdmins: false, IsDemoCompany: true, LoginRestrictedToSso: false, LoginRestrictedToSsoAndAdmin: false},
   {CompanyProfileId: "456", CompanyID: "456", StartDate: new Date('2021-01-01'), StopDate: new Date('2099-01-01'), CompanyName: "Bluth Company", AllowBlindSignups: false, LoginRestrictedCompletely: false, LoginRestrictedToAdmins: false, IsDemoCompany: true, LoginRestrictedToSso: false, LoginRestrictedToSsoAndAdmin: false},
   {CompanyProfileId: "789", CompanyID: "789", StartDate: new Date('2021-01-01'), StopDate: new Date('2099-01-01'), CompanyName: "Dunder Mifflin", AllowBlindSignups: false, LoginRestrictedCompletely: false, LoginRestrictedToAdmins: false, IsDemoCompany: true, LoginRestrictedToSso: false, LoginRestrictedToSsoAndAdmin: false}

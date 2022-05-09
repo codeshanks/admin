@@ -5,54 +5,211 @@
       <a ngbNavLink>Settings</a>
       <ng-template ngbNavContent>
         <div class="row mt-1">
-        <div class="col-md-2 grid-margin stretch-card">
-          <div class="card">
-            <div class="card-body">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="CompanyName">Company Name</label>
-                  <input type="text" [(ngModel)]="company.CompanyName" class="form-control" id="CompanyName" placeholder="">
+          <div class="col-md-2 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="CompanyName">Company Name</label>
+                    <input type="text" [(ngModel)]="company.CompanyName" class="form-control" id="CompanyName"
+                      placeholder="">
+                  </div>
                 </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="URLSuffix">URLSuffix</label>
-                  <input type="text" [(ngModel)]="company.URLSuffix" class="form-control" id="URLSuffix" placeholder="">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="URLSuffix">URLSuffix</label>
+                    <input type="text" [(ngModel)]="company.URLSuffix" class="form-control" id="URLSuffix"
+                      placeholder="">
+                  </div>
                 </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="ReportingName">ReportingName</label>
-                  <input type="text" [(ngModel)]="company.ReportingName" class="form-control" id="ReportingName" placeholder="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-1">
-        <div class="col-md-12 grid-margin stretch-card">
-          <div class="card">
-            <div class="card-body">
-              <div class="col">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="active">
-                  <label class="form-check-label" for="active">
-                    Active
-                  </label>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="ReportingName">ReportingName</label>
+                    <input type="text" [(ngModel)]="company.ReportingName" class="form-control" id="ReportingName"
+                      placeholder="">
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <div class="row mt-1">
+          <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" [(ngModel)]="company.IsActive" type="checkbox" value=""
+                        id="active">
+                      <label class="form-check-label" for="active">
+                        Active
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="row align-items-center">
+                      <label class="form-check-label col-auto" for="startDate">
+                        Start Date
+                      </label>
+                      <div class="col-auto">
+                        <input class="form-check-input" type="checkbox"  [checked]="companyDetail.StartDate"
+                          id="startDatePresent">
+                      </div>
+                      <div class="col-auto">
+                        <input type="text" [ngModel]="companyDetail.StartDate | date:'shortDate'" class="form-control"
+                          id="StartDate" size="8">
+                      </div>
+                    </div>
+                    <div class="row align-items-center mt-1">
+                      <label class="form-check-label col-auto" for="endDate">
+                        Stop Date
+                      </label>
+                      <div class="col-auto">
+                        <input class="form-check-input" type="checkbox"  [checked]="companyDetail.StopDate"
+                          id="stopDatePresent">
+                      </div>
+                      <div class="col-auto">
+                        <input type="text" [ngModel]="companyDetail.StopDate | date:'shortDate'" class="form-control"
+                          id="StopDate" size="8">
+                      </div>
+                    </div>
+                    <div class="row align-items-center mt-1">
+                      <label class="form-check-label col-auto" for="endDate">
+                        PII Purge Date&nbsp;&nbsp;
+                      </label>
+                      <div class="col-auto">
+                        <input type="text" class="form-control" disabled
+                          id="pipurgedate" size="8">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" [(ngModel)]="companyDetail.AllowBlindSignups" type="checkbox" value=""
+                        id="AllowBlindSignups">
+                      <label class="form-check-label" for="AllowBlindSignups">
+                        Allow "blind sign-ups"
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" [(ngModel)]="companyDetail.IsDemoCompany" type="checkbox" value=""
+                        id="IsDemoCompany">
+                      <label class="form-check-label" for="active">
+                        Is "Demo Company"
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input"  type="checkbox" value=""
+                        id="MultipleEmployeeID">
+                      <label class="form-check-label" for="MultipleEmployeeID">
+                        Multiple Employee ID
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" [(ngModel)]="companyDetail.LoginRestrictedCompletely" type="checkbox" value=""
+                        id="LoginRestrictedCompletely">
+                      <label class="form-check-label" for="LoginRestrictedCompletely">
+                        Restrict Login Completely
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" [(ngModel)]="companyDetail.LoginRestrictedToSso" type="checkbox" value=""
+                        id="LoginRestrictedToSso">
+                      <label class="form-check-label" for="LoginRestrictedToSso">
+                        Restrict Login To SSO
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" [(ngModel)]="companyDetail.LoginRestrictedToAdmins"  type="checkbox" value=""
+                        id="LoginRestrictedToAdmins">
+                      <label class="form-check-label" for="LoginRestrictedToAdmins">
+                        Restrict Login To Admins
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" [(ngModel)]="companyDetail.LoginRestrictedToSsoAndAdmin" type="checkbox" value=""
+                        id="LoginRestrictedToSsoAndAdmin">
+                      <label class="form-check-label" for="LoginRestrictedToSsoAndAdmin">
+                        Restrict Login to SSO and Admins
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input"  type="checkbox" value=""
+                        id="EnableCanadianFormat">
+                      <label class="form-check-label" for="EnableCanadianFormat">
+                        Enable Canadian Format
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input"   type="checkbox" value=""
+                        id="LoginRestrictedToAdmins">
+                      <label class="form-check-label" for="LoginRestrictedToAdmins">
+                        Enable US / Canadian Format
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value=""
+                        id="DENY">
+                      <label class="form-check-label" for="DENY">
+                        Show "DENY" functionality
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input"  type="checkbox" value=""
+                        id="Showhelpmenues">
+                      <label class="form-check-label" for="Showhelpmenues">
+                        Show help menues
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value=""
+                        id="DENY">
+                      <label class="form-check-label" for="DENY">
+                        Skip Employee profile checking
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input"  type="checkbox" value=""
+                        id="Showhelpmenues">
+                      <label class="form-check-label" for="Showhelpmenues">
+                        Skip Admin profile checking
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input"  type="checkbox" value=""
+                        id="Showhelpmenues">
+                      <label class="form-check-label" for="Showhelpmenues">
+                        Skip Employee SSO profile checking
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input"  type="checkbox" value=""
+                        id="Showhelpmenues">
+                      <label class="form-check-label" for="Showhelpmenues">
+                        Skip Admin SSO profile checking
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </ng-template>
     </li>
     <li [ngbNavItem]="2">
       <a ngbNavLink>Documents</a>
       <ng-template ngbNavContent>
-        <app-document-container
-        [companyId]="this.companyId">
+        <app-document-container [companyId]="this.companyId">
         </app-document-container>
       </ng-template>
     </li>

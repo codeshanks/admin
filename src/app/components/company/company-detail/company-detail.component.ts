@@ -24,6 +24,7 @@ export class CompanyDetailComponent implements OnInit {
     this.companyId = this.route.snapshot.paramMap.get('id')?? '';
     this.getCompanyDetails(this.companyId);
     this.getCompany(this.companyId);
+    console.log(this.companyDetail);
   }
 
   getCompanyDetails(id: string){
