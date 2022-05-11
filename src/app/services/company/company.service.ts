@@ -10,20 +10,20 @@ export class CompanyService {
 
 constructor() { }
 
-private cache$!: Observable<Array<Company>>;
+private companyCache$!: Observable<Array<Company>>;
 
 getCompanies() {
-  if (!this.cache$) {
-    this.cache$ = this.requestCompanies();
+  if (!this.companyCache$) {
+    this.companyCache$ = this.requestCompanies();
   }
-  return this.cache$;
+  return this.companyCache$;
 }
 
 getCompany(id: string) {
-  if (!this.cache$){
-    this.cache$ = this.requestCompanies();
+  if (!this.companyCache$){
+    this.companyCache$ = this.requestCompanies();
   }
-  return this.cache$.pipe(map(x => x.find(z => z.CompanyID == id)))
+  return this.companyCache$.pipe(map(x => x.find(z => z.CompanyID == id)))
 }
 
 private requestCompanies(): Observable<any[]> {

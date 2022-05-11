@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { EditText } from 'src/app/components/document/document-detail/modules/edit-text/edit-text';
 import { DocumentDetail } from '../../components/document/document-detail/document-detail';
 
 @Injectable({
@@ -10,17 +11,17 @@ constructor() { }
 
 
 
-getDocumentByCompanyId(id: string){
+GetDocumentByCompanyId(id: string){
   if (id == '')
     return this.documentData;
   return this.documentData.filter(x => x.companyId == id);
 }
 
-getAllDocuments(){
+GetAllDocuments(){
   return this.documentData;
 }
 
-getDocumentDetail(id: string){
+GetDocumentDetail(id: string){
   var document = <DocumentDetail>this.documentDetail.find(x => x.FormId == id);
   return document??  <DocumentDetail>{};
 }
@@ -31,6 +32,10 @@ GetLinkedFiles(id: string){
 
 GetpdfXMLOutputs(id: string){
 
+}
+
+GetEditableFields(id: string){
+  return <EditText[]>this.editableFields.filter(x => x.FormId == id);
 }
 
 detail: DocumentDetail = <DocumentDetail>{};
@@ -72,6 +77,12 @@ documentData =
 linkedFiles =
 [
   { FormId: "123", Type: "Content", Title: "Inline PDF", FileName: "Arizona PDF" }
+]
+
+editableFields =
+[
+  { FormId: "123", Field: "Text/HTML - Block Above Document (optional)", Value: "this is an optional text/html area" },
+  { FormId: "123", Field: "Text/HTML - Block Below Document (optional)", Value: "this is an optional area below the inline document" }
 ]
 
 

@@ -277,7 +277,7 @@
     </ng-template>
   </li>
   <li [ngbNavItem]="2">
-    <a ngbNavLink (click)="this.getFiles()">File Assets</a>
+    <a ngbNavLink>File Assets</a>
     <ng-template ngbNavContent>
       <div class="row mt-1">
         <div class="col-md-12 grid-margin stretch-card">
@@ -382,7 +382,9 @@
   <li [ngbNavItem]="4">
     <a ngbNavLink>Edit text Fields</a>
     <ng-template ngbNavContent>
-      Settings!
+      <app-edit-text
+        [documentId] = "this.documentId">
+      </app-edit-text>
     </ng-template>
   </li>
   <li [ngbNavItem]="5">

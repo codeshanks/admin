@@ -12,7 +12,8 @@ export class DocumentDetailComponent implements OnInit {
   get documentId(): string { return this._documentId; }
   set documentId(value: string){
       this._documentId = value;
-      this.documentDetail = this.documentService.getDocumentDetail(value);
+      this.documentDetail = this.documentService.GetDocumentDetail(value);
+      this.getFiles()
   }
   private _documentId: string = '';
   documentDetail!: DocumentDetail;

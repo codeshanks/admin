@@ -19,8 +19,7 @@ export class DocumentListComponent implements OnInit {
   documents:any = [];
   public term: string = "";
   ngOnInit() {
-    //this.companyId = Number(this.route.snapshot.paramMap.get('name'))?? 0;
-    this.documents = this.documentService.getDocumentByCompanyId(this.companyId);
+    this.documents = this.documentService.GetDocumentByCompanyId(this.companyId);
     if (this.documents){
       this.documentId.emit(this.documents[0].eformId);
     }
