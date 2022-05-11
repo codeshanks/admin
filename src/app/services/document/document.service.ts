@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DocumentDetailComponent } from 'src/app/components/document/document-detail/document-detail.component';
 import { DocumentDetail } from '../../components/document/document-detail/document-detail';
 
 @Injectable({

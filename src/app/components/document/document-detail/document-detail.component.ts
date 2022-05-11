@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, SimpleChange } from '@angular/core';
-import { DocumentService } from 'src/app/services/document/document.service';
+import { DocumentService } from '../../../services/document/document.service';
 import { DocumentDetail } from './document-detail';
 
 @Component({
