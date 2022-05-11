@@ -5,24 +5,24 @@
       <a ngbNavLink>Settings</a>
       <ng-template ngbNavContent>
         <div class="row mt-1">
-          <div class="col-md-2 grid-margin stretch-card">
+          <div class="col-md-4 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <div class="form-row">
+                <div class="row">
                   <div class="form-group">
                     <label for="CompanyName">Company Name</label>
                     <input type="text" [(ngModel)]="company.CompanyName" class="form-control" id="CompanyName"
                       placeholder="">
                   </div>
                 </div>
-                <div class="form-row">
+                <div class="row">
                   <div class="form-group">
                     <label for="URLSuffix">URLSuffix</label>
                     <input type="text" [(ngModel)]="company.URLSuffix" class="form-control" id="URLSuffix"
                       placeholder="">
                   </div>
                 </div>
-                <div class="form-row">
+                <div class="row">
                   <div class="form-group">
                     <label for="ReportingName">ReportingName</label>
                     <input type="text" [(ngModel)]="company.ReportingName" class="form-control" id="ReportingName"
@@ -40,7 +40,7 @@
                 <div class="row">
                   <div class="col-auto">
                     <div class="form-check">
-                      <input class="form-check-input" [(ngModel)]="company.IsActive" type="checkbox" value=""
+                      <input class="form-check-input" [(ngModel)]="company.IsActive" type="checkbox"
                         id="active">
                       <label class="form-check-label" for="active">
                         Active
@@ -86,21 +86,21 @@
                   </div>
                   <div class="col-auto">
                     <div class="form-check">
-                      <input class="form-check-input" [(ngModel)]="companyDetail.AllowBlindSignups" type="checkbox" value=""
+                      <input class="form-check-input" [(ngModel)]="companyDetail.AllowBlindSignups" type="checkbox"
                         id="AllowBlindSignups">
                       <label class="form-check-label" for="AllowBlindSignups">
                         Allow "blind sign-ups"
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" [(ngModel)]="companyDetail.IsDemoCompany" type="checkbox" value=""
+                      <input class="form-check-input" [(ngModel)]="companyDetail.IsDemoCompany" type="checkbox"
                         id="IsDemoCompany">
                       <label class="form-check-label" for="active">
                         Is "Demo Company"
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input"  type="checkbox" value=""
+                      <input class="form-check-input"  type="checkbox"
                         id="MultipleEmployeeID">
                       <label class="form-check-label" for="MultipleEmployeeID">
                         Multiple Employee ID
@@ -109,21 +109,21 @@
                   </div>
                   <div class="col-auto">
                     <div class="form-check">
-                      <input class="form-check-input" [(ngModel)]="companyDetail.LoginRestrictedCompletely" type="checkbox" value=""
+                      <input class="form-check-input" [(ngModel)]="companyDetail.LoginRestrictedCompletely" type="checkbox"
                         id="LoginRestrictedCompletely">
                       <label class="form-check-label" for="LoginRestrictedCompletely">
                         Restrict Login Completely
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" [(ngModel)]="companyDetail.LoginRestrictedToSso" type="checkbox" value=""
+                      <input class="form-check-input" [(ngModel)]="companyDetail.LoginRestrictedToSso" type="checkbox"
                         id="LoginRestrictedToSso">
                       <label class="form-check-label" for="LoginRestrictedToSso">
                         Restrict Login To SSO
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" [(ngModel)]="companyDetail.LoginRestrictedToAdmins"  type="checkbox" value=""
+                      <input class="form-check-input" [(ngModel)]="companyDetail.LoginRestrictedToAdmins"  type="checkbox"
                         id="LoginRestrictedToAdmins">
                       <label class="form-check-label" for="LoginRestrictedToAdmins">
                         Restrict Login To Admins
@@ -132,21 +132,21 @@
                   </div>
                   <div class="col-auto">
                     <div class="form-check">
-                      <input class="form-check-input" [(ngModel)]="companyDetail.LoginRestrictedToSsoAndAdmin" type="checkbox" value=""
+                      <input class="form-check-input" [(ngModel)]="companyDetail.LoginRestrictedToSsoAndAdmin" type="checkbox"
                         id="LoginRestrictedToSsoAndAdmin">
                       <label class="form-check-label" for="LoginRestrictedToSsoAndAdmin">
                         Restrict Login to SSO and Admins
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input"  type="checkbox" value=""
+                      <input class="form-check-input"  type="checkbox"
                         id="EnableCanadianFormat">
                       <label class="form-check-label" for="EnableCanadianFormat">
                         Enable Canadian Format
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input"   type="checkbox" value=""
+                      <input class="form-check-input"   type="checkbox"
                         id="LoginRestrictedToAdmins">
                       <label class="form-check-label" for="LoginRestrictedToAdmins">
                         Enable US / Canadian Format
@@ -155,14 +155,14 @@
                   </div>
                   <div class="col-auto">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value=""
+                      <input class="form-check-input" type="checkbox"
                         id="DENY">
                       <label class="form-check-label" for="DENY">
                         Show "DENY" functionality
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input"  type="checkbox" value=""
+                      <input class="form-check-input"  type="checkbox"
                         id="Showhelpmenues">
                       <label class="form-check-label" for="Showhelpmenues">
                         Show help menues
@@ -171,28 +171,28 @@
                   </div>
                   <div class="col-auto">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value=""
+                      <input class="form-check-input" type="checkbox"
                         id="DENY">
                       <label class="form-check-label" for="DENY">
                         Skip Employee profile checking
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input"  type="checkbox" value=""
+                      <input class="form-check-input"  type="checkbox"
                         id="Showhelpmenues">
                       <label class="form-check-label" for="Showhelpmenues">
                         Skip Admin profile checking
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input"  type="checkbox" value=""
+                      <input class="form-check-input"  type="checkbox"
                         id="Showhelpmenues">
                       <label class="form-check-label" for="Showhelpmenues">
                         Skip Employee SSO profile checking
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input"  type="checkbox" value=""
+                      <input class="form-check-input"  type="checkbox"
                         id="Showhelpmenues">
                       <label class="form-check-label" for="Showhelpmenues">
                         Skip Admin SSO profile checking
