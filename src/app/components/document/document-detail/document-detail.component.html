@@ -1,23 +1,395 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+  <li [ngbNavItem]="1">
+    <a ngbNavLink>Properties</a>
+    <ng-template ngbNavContent>
+      {{documentDetail.FormName}}
+      <div class="mt-1">
+        <div class="col-md-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="FormName">Form Name</label>
+                    <input type="text" [(ngModel)]="documentDetail.FormName" class="form-control" id="FormName"
+                      placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="FormId">Form ID</label>
+                    <input type="text" [(ngModel)]="documentDetail.FormId" class="form-control" id="FormId"
+                      placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="ClientFormName">Client Form Name</label>
+                    <input type="text" [(ngModel)]="documentDetail.ClientFormName" class="form-control"
+                      id="ClientFormName" placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="GroupName">Group Name</label>
+                    <input type="text" [(ngModel)]="documentDetail.GroupName" class="form-control" id="GroupName"
+                      placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <label for="DisplayOrder">Display Order</label>
+                    <input type="text" [(ngModel)]="documentDetail.DisplayOrder" class="form-control" id=""
+                      placeholder="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-1">
+        <div class="col-md-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="FormYear">Form Year</label>
+                    <input type="text" [(ngModel)]="documentDetail.FormYear" class="form-control" id="FormYear"
+                      placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="Revision">Revision (Rev mm/yyyy)</label>
+                    <input type="text" [(ngModel)]="documentDetail.Revision" class="form-control" id="Revision"
+                      placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="FormState">Form State</label>
+                    <input type="text" [(ngModel)]="documentDetail.FormState" class="form-control" id="FormState"
+                      placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="GrossStateFilter">Gross State Filter</label>
+                    <input type="text" [(ngModel)]="documentDetail.GrossStateFilter" class="form-control"
+                      id="GrossStateFilter" placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="FormType">Form Type</label>
+                    <input type="text" [(ngModel)]="documentDetail.FormType" class="form-control" id="FormType"
+                      placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="Classification">Classification</label>
+                    <input type="text" [(ngModel)]="documentDetail.Classification" class="form-control"
+                      id="Classification" placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="Expiration">Expiration (mm/dd)</label>
+                    <input type="text" [(ngModel)]="documentDetail.Expiration" class="form-control" id="Expiration"
+                      placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="ExpirationCondition">Expiration Condition</label>
+                    <input type="text" [(ngModel)]="documentDetail.ExpirationCondition" class="form-control"
+                      id="ExpirationCondition" placeholder="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-1">
+        <div class="col-md-3 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h6>System Behavior</h6>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.LimitOne" type="checkbox" id="LimitOne">
+                <label class="form-check-label" for="LimitOne">
+                  Limit One
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.ViewOnlyOnceComplete" type="checkbox"
+                  id="ViewOnlyOnceComplete">
+                <label class="form-check-label" for="ViewOnlyOnceComplete">
+                  View Only Once Complete
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.AllowFinishLater" type="checkbox"
+                  id="AllowFinishLater">
+                <label class="form-check-label" for="AllowFinishLater">
+                  Allow Finish Later
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h6>Reset</h6>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.StandardResetTriggers" type="checkbox"
+                  id="StandardResetTriggers">
+                <label class="form-check-label" for="StandardResetTriggers">
+                  Standard Reset Triggers
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.ResetWithRehireResetFile" type="checkbox"
+                  id="ResetWithRehireResetFile">
+                <label class="form-check-label" for="ResetWithRehireResetFile">
+                  Reset With Rehire Reset File
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.ResetWithHireDateChange" type="checkbox"
+                  id="ResetWithHireDateChange">
+                <label class="form-check-label" for="ResetWithHireDateChange">
+                  Reset With Hire Date Change
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.ResetWithFormCode" type="checkbox"
+                  id="ResetWithFormCode">
+                <label class="form-check-label" for="ResetWithFormCode">
+                  Reset With Form Code
+                </label>
+                <input type="text" [(ngModel)]="documentDetail.ResetFormCode" class="form-control" id="ResetFormCode"
+                  placeholder="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h6>When Current</h6>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.WCPresentNewVersion" type="checkbox"
+                  id="WCPresentNewVersion">
+                <label class="form-check-label" for="WCPresentNewVersion">
+                  Present New Version
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.WCRequireSubmission" type="checkbox"
+                  id="WCRequireSubmission">
+                <label class="form-check-label" for="WCRequireSubmission">
+                  Require Submission
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.WCPendingFormReport" type="checkbox"
+                  id="WCPendingFormReport">
+                <label class="form-check-label" for="WCPendingFormReport">
+                  Pending Form Report
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h6>When No Current</h6>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.WNCPresentNewVersion" type="checkbox"
+                  id="WNCPresentNewVersion">
+                <label class="form-check-label" for="WNCPresentNewVersion">
+                  Present New Version
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.WNCRequireSubmission" type="checkbox"
+                  id="WNCRequireSubmission">
+                <label class="form-check-label" for="WNCRequireSubmission">
+                  Require Submission
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="documentDetail.WNCPendingFormReport" type="checkbox"
+                  id="WNCPendingFormReport">
+                <label class="form-check-label" for="WNCPendingFormReport">
+                  Pending Form Report
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-1">
+          <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="SupersededFormId">Superseded Form Id</label>
+                      <input type="text" [(ngModel)]="documentDetail.SupersededFormId" class="form-control"
+                        id="SupersededFormId" placeholder="">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="TemplateType">Template Type</label>
+                      <input type="text" [(ngModel)]="documentDetail.TemplateType" class="form-control"
+                        id="TemplateType" placeholder="">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="TemplateType">Template Type</label>
+                      <input type="text" [(ngModel)]="documentDetail.TemplateType" class="form-control"
+                        id="TemplateType" placeholder="">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="CompletedConfirmText">Completed Confirm Text</label>
+                      <input type="text" [(ngModel)]="documentDetail.CompletedConfirmText" class="form-control"
+                        id="CompletedConfirmText" placeholder="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink (click)="this.getFiles()">File Assets</a>
+    <ng-template ngbNavContent>
+      <div class="row mt-1">
+        <div class="col-md-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h6>Linked Files</h6>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Type</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">File Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let file of linkedFiles">
+                      <td>{{file.Type}}</td>
+                      <td>{{file.Title}}</td>
+                      <td>{{file.FileName}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button class="btn btn-primary" type="submit">Export</button>&nbsp;
+              <button class="btn btn-primary" type="submit">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-1">
+        <div class="col-md-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h6>PDF & XML Outputs</h6>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Output Type</th>
+                      <th scope="col">Version</th>
+                      <th scope="col">File Name</th>
+                      <th scope="col">Answers Path</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let file of pdfXMLOutputs">
+                      <td>{{file.OutputType}}</td>
+                      <td>{{file.Version}}</td>
+                      <td>{{file.FileName}}</td>
+                      <td>{{file.AnswersPath}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button class="btn btn-primary" type="submit">Export</button>&nbsp;
+              <button class="btn btn-primary" type="submit">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="3">
+    <a ngbNavLink>Eform Variables</a>
+    <ng-template ngbNavContent>
+      <div class="row mt-1">
+        <div class="col-md-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h6>Eform Variables</h6>
+              <div class="row g-3">
+              <div class="col-md-6">
+                <label for="EFormVariable">Setting Name</label>
+                <input type="text" class="form-control" id="EFormVariable" placeholder="">
+              </div>
+              <div class="col-auto">
+                <button class="btn btn-primary mt-4" type="submit">Add EForm Variable</button>
+              </div>
+            </div>
 
-  <ul ngbNav #nav="ngbNav" class="nav-tabs">
-    <li [ngbNavItem]="1">
-      <a ngbNavLink>Settings</a>
-      <ng-template ngbNavContent>
-        {{this.documentId}}
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="2">
-      <a ngbNavLink>Uploads</a>
-      <ng-template ngbNavContent>
-        Settings!
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="3">
-      <a ngbNavLink>Actions</a>
-      <ng-template ngbNavContent>
-        Settings!
-      </ng-template>
-    </li>
-  </ul>
-  <div [ngbNavOutlet]="nav" class="mt-2"></div>
-
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Setting Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="4">
+    <a ngbNavLink>Edit text Fields</a>
+    <ng-template ngbNavContent>
+      Settings!
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="5">
+    <a ngbNavLink>Presentation Rules</a>
+    <ng-template ngbNavContent>
+      Settings!
+    </ng-template>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

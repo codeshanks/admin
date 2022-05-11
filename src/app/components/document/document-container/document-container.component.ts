@@ -11,13 +11,13 @@ export class DocumentContainerComponent implements OnInit {
 
   @ViewChild(DocumentDetailComponent)
   private documentDetail!: DocumentDetailComponent;
-  documentId!: number;
+  documentId!: string;
   @Input() companyId: string ='';
   ngOnInit() {
 
   }
 
-  onSelected(id: number){
+  onSelected(id: string){
     this.documentId = id;
   }
 

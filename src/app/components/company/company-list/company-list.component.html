@@ -4,7 +4,6 @@
     <tbody>
       <tr *ngFor="let company of companies |filter:term" [routerLink]="['/company', company.CompanyID]">
         <td>{{company.CompanyName}}</td>
-        <td>{{company.CompanyID}}</td>
       </tr>
     </tbody>
   </table>

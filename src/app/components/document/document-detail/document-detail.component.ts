@@ -1,4 +1,6 @@
 import { Component, Input, OnInit, SimpleChange } from '@angular/core';
+import { DocumentService } from 'src/app/services/document/document.service';
+import { DocumentDetail } from './document-detail';
 
 @Component({
   selector: 'app-document-detail',
@@ -7,14 +9,22 @@ import { Component, Input, OnInit, SimpleChange } from '@angular/core';
 })
 export class DocumentDetailComponent implements OnInit {
   @Input()
-  set documentId(value: number){
-    if(value > 0){
-      console.log(value);
-    }
+  get documentId(): string { return this._documentId; }
+  set documentId(value: string){
+      this._documentId = value;
+      this.documentDetail = this.documentService.getDocumentDetail(value);
   }
-  constructor() { }
+  private _documentId: string = '';
+  documentDetail!: DocumentDetail;
+  linkedFiles!:any;
+  pdfXMLOutputs!:any;
+  constructor(private documentService: DocumentService) { }
 
   ngOnInit() {
   }
 
+  getFiles() {
+    this.linkedFiles = this.documentService.GetLinkedFiles(this.documentId);
+    this.pdfXMLOutputs = this.documentService.GetpdfXMLOutputs(this.documentId);
+  }
 }

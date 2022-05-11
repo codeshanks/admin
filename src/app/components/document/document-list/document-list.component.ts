@@ -8,22 +8,25 @@ import { DocumentService } from '../../../services/document/document.service';
   styleUrls: ['./document-list.component.scss']
 })
 export class DocumentListComponent implements OnInit {
-  @Output() documentId = new EventEmitter<number>();
 
   constructor(
     private documentService: DocumentService,
     private route: ActivatedRoute,
   ) { }
 
+  @Output() documentId = new EventEmitter<string>();
   @Input() companyId: string = '';
   documents:any = [];
   public term: string = "";
   ngOnInit() {
     //this.companyId = Number(this.route.snapshot.paramMap.get('name'))?? 0;
     this.documents = this.documentService.getDocumentByCompanyId(this.companyId);
+    if (this.documents){
+      this.documentId.emit(this.documents[0].eformId);
+    }
   }
 
-  selectDoc(id: number){
+  selectDoc(id: string){
     this.documentId.emit(id);
   }
 
