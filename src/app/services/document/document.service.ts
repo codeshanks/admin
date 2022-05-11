@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EditText } from 'src/app/components/document/document-detail/modules/edit-text/edit-text';
+import { EditText } from '../../components/document/document-detail/modules/edit-text/edit-text';
 import { DocumentDetail } from '../../components/document/document-detail/document-detail';
 
 @Injectable({
