@@ -7,11 +7,9 @@ import { AppComponent } from './app.component';
 import { NavBasicModule } from './ui/nav-basic/nav-basic.module';
 
 import { CompanyListModule } from "./components/company/company-list/company-list.module";
-import { CompanyDetailModule } from './components/company/company-detail/company-detail.module'
-import { DocumentListModule } from './components/document/document-list/document-list.module';
-import { DocumentContainerModule } from './components/document/document-container/document-container.module';
-import { DocumentDetailModule } from './components/document/document-detail/document-detail.module';
-import { ContainerModule } from './components/container/container.module';
+import { HeaderModule } from './components/header/header.module';
+import { EformManagerModule } from './components/eform-manager/eform-manager.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,10 +20,9 @@ import { ContainerModule } from './components/container/container.module';
     AppRoutingModule,
     NavBasicModule,
     CompanyListModule,
-    DocumentListModule,
-    DocumentContainerModule,
-    DocumentDetailModule,
-    ContainerModule,
+    HeaderModule,
+    EformManagerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

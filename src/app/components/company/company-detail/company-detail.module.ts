@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { CompanyDetailComponent } from './company-detail.component'
 import { NavBasicModule } from  '../../../ui/nav-basic/nav-basic.module';
-import { DocumentContainerModule } from '../../document/document-container/document-container.module';
+
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { EformManagerModule } from '../../eform-manager/eform-manager.module';
 
 const routes: Routes = [
   { path: '', component: CompanyDetailComponent}
@@ -15,7 +16,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     NavBasicModule,
-    DocumentContainerModule,
+    EformManagerModule,
     FormsModule,
     RouterModule.forChild(routes),
   ],

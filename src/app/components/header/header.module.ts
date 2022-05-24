@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContainerComponent } from './container.component';
+import { HeaderComponent } from './header.component';
 import { NavBasicModule } from '../../ui/nav-basic/nav-basic.module';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
     NavBasicModule,
     RouterModule
   ],
-  declarations: [ContainerComponent],
-  exports: [ContainerComponent]
+  declarations: [HeaderComponent],
+  exports: [HeaderComponent]
 })
-export class ContainerModule { }
+export class HeaderModule { }

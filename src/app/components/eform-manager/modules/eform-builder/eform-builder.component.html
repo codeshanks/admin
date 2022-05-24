@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-3 stretch-card">
+    <h6>Editable Fields</h6>
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <tbody>
+              <tr *ngFor="let field of fields" (click)="selectField(field.Field)">
+                <td>{{field.Field}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7 stretch-card">
+    <h6>Text / HTML</h6>
+
+        <textarea type="text" id="textHTML" [(ngModel)]="currentValue" class="form-control" ></textarea>
+      </div>
+
+
+  <div class="col-md-2 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div><button class="btn btn-primary btn-sm" type="submit">Line Break</button></div>
+        <div><button class="btn btn-primary btn-sm mt-1" type="submit">Bold</button></div>
+        <div><button class="btn btn-primary btn-sm mt-1" type="submit">Italic</button></div>
+        <div><button class="btn btn-primary btn-sm mt-1" type="submit">Underline</button></div>
+        <div><button class="btn btn-primary btn-sm mt-1" type="submit">link</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mt-1">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="col-auto">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

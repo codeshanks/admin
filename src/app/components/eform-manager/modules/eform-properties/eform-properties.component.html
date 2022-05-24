@@ -1,0 +1,272 @@
+{{formProperties.FormName}}
+<div class="mt-1">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="FormName">Form Name</label>
+              <input type="text" [(ngModel)]="formProperties.FormName" class="form-control" id="FormName"
+                placeholder="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="FormId">Form ID</label>
+              <input type="text" [(ngModel)]="formProperties.FormId" class="form-control" id="FormId"
+                placeholder="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="ClientFormName">Client Form Name</label>
+              <input type="text" [(ngModel)]="formProperties.ClientFormName" class="form-control"
+                id="ClientFormName" placeholder="">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="GroupName">Group Name</label>
+              <input type="text" [(ngModel)]="formProperties.GroupName" class="form-control" id="GroupName"
+                placeholder="">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="DisplayOrder">Display Order</label>
+              <input type="text" [(ngModel)]="formProperties.DisplayOrder" class="form-control" id=""
+                placeholder="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mt-1">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="FormYear">Form Year</label>
+              <input type="text" [(ngModel)]="formProperties.FormYear" class="form-control" id="FormYear"
+                placeholder="">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="Revision">Revision (Rev mm/yyyy)</label>
+              <input type="text" [(ngModel)]="formProperties.Revision" class="form-control" id="Revision"
+                placeholder="">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="FormState">Form State</label>
+              <input type="text" [(ngModel)]="formProperties.FormState" class="form-control" id="FormState"
+                placeholder="">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="GrossStateFilter">Gross State Filter</label>
+              <input type="text" [(ngModel)]="formProperties.GrossStateFilter" class="form-control"
+                id="GrossStateFilter" placeholder="">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="FormType">Form Type</label>
+              <input type="text" [(ngModel)]="formProperties.FormType" class="form-control" id="FormType"
+                placeholder="">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="Classification">Classification</label>
+              <input type="text" [(ngModel)]="formProperties.Classification" class="form-control"
+                id="Classification" placeholder="">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="Expiration">Expiration (mm/dd)</label>
+              <input type="text" [(ngModel)]="formProperties.Expiration" class="form-control" id="Expiration"
+                placeholder="">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="ExpirationCondition">Expiration Condition</label>
+              <input type="text" [(ngModel)]="formProperties.ExpirationCondition" class="form-control"
+                id="ExpirationCondition" placeholder="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mt-1">
+  <div class="col-md-3 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6>System Behavior</h6>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.LimitOne" type="checkbox" id="LimitOne">
+          <label class="form-check-label" for="LimitOne">
+            Limit One
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.ViewOnlyOnceComplete" type="checkbox"
+            id="ViewOnlyOnceComplete">
+          <label class="form-check-label" for="ViewOnlyOnceComplete">
+            View Only Once Complete
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.AllowFinishLater" type="checkbox"
+            id="AllowFinishLater">
+          <label class="form-check-label" for="AllowFinishLater">
+            Allow Finish Later
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6>Reset</h6>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.StandardResetTriggers" type="checkbox"
+            id="StandardResetTriggers">
+          <label class="form-check-label" for="StandardResetTriggers">
+            Standard Reset Triggers
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.ResetWithRehireResetFile" type="checkbox"
+            id="ResetWithRehireResetFile">
+          <label class="form-check-label" for="ResetWithRehireResetFile">
+            Reset With Rehire Reset File
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.ResetWithHireDateChange" type="checkbox"
+            id="ResetWithHireDateChange">
+          <label class="form-check-label" for="ResetWithHireDateChange">
+            Reset With Hire Date Change
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.ResetWithFormCode" type="checkbox"
+            id="ResetWithFormCode">
+          <label class="form-check-label" for="ResetWithFormCode">
+            Reset With Form Code
+          </label>
+          <input type="text" [(ngModel)]="formProperties.ResetFormCode" class="form-control" id="ResetFormCode"
+            placeholder="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6>When Current</h6>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.WCPresentNewVersion" type="checkbox"
+            id="WCPresentNewVersion">
+          <label class="form-check-label" for="WCPresentNewVersion">
+            Present New Version
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.WCRequireSubmission" type="checkbox"
+            id="WCRequireSubmission">
+          <label class="form-check-label" for="WCRequireSubmission">
+            Require Submission
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.WCPendingFormReport" type="checkbox"
+            id="WCPendingFormReport">
+          <label class="form-check-label" for="WCPendingFormReport">
+            Pending Form Report
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6>When No Current</h6>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.WNCPresentNewVersion" type="checkbox"
+            id="WNCPresentNewVersion">
+          <label class="form-check-label" for="WNCPresentNewVersion">
+            Present New Version
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.WNCRequireSubmission" type="checkbox"
+            id="WNCRequireSubmission">
+          <label class="form-check-label" for="WNCRequireSubmission">
+            Require Submission
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="formProperties.WNCPendingFormReport" type="checkbox"
+            id="WNCPendingFormReport">
+          <label class="form-check-label" for="WNCPendingFormReport">
+            Pending Form Report
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="SupersededFormId">Superseded Form Id</label>
+                <input type="text" [(ngModel)]="formProperties.SupersededFormId" class="form-control"
+                  id="SupersededFormId" placeholder="">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="TemplateType">Template Type</label>
+                <input type="text" [(ngModel)]="formProperties.TemplateType" class="form-control"
+                  id="TemplateType" placeholder="">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="TemplateType">Template Type</label>
+                <input type="text" [(ngModel)]="formProperties.TemplateType" class="form-control"
+                  id="TemplateType" placeholder="">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="CompletedConfirmText">Completed Confirm Text</label>
+                <input type="text" [(ngModel)]="formProperties.CompletedConfirmText" class="form-control"
+                  id="CompletedConfirmText" placeholder="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
